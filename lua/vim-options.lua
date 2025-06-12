@@ -34,7 +34,25 @@ vim.keymap.set("t", '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- General settings
 vim.keymap.set("n", ";", ":", { desc = "CMD enter command mode" })
 vim.keymap.set("i", "jk", "<ESC>")
+vim.keymap.set("i", "<A-8>", "[")
+vim.keymap.set("i", "<A-9>", "]")
+
+-- Preview settings
+vim.keymap.set("n", "<leader>p", ":MarkdownPreviewToggle<CR>")
 
 -- vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.wo.number = true
 
+
+
+
+-- -- Autocomands (not sure if this works)
+-- local autocmd = vim.api.nvim_create_autocmd
+--
+-- -- Remove trailing whitespaces in all files
+-- autocmd({"BufWritePre"}, {pattern = {"*"}, command = [[%s/\s+$//e]]})
+--
+-- -- Remove trailing windows carriage return in all files
+-- if vim.fn.has("win64") == 1 or vim.fn.has("wsl") == 1 then
+--   autocmd({"BufWritePre"}, {pattern = {"*"}, command = [[%s/\r$//e]] })
+-- end 
