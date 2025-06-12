@@ -10,6 +10,7 @@ This config is based on the neovim config from [cpow].
 - [ ] Typst
   - [ ] Linter, Formatter, LSP => Tinymist
   - [ ] Preview
+- [ ] Panes für Buffer (switch with Tab)?
 
 ## Issues
 - Markdown Preview. Not opening Browser!
@@ -36,7 +37,7 @@ rm -rf ~/.local/share/nvim
 Since `:MasonInstallAll` only exists in the NVChad configuration the installations need to be made
 manually. Here is a list of packages that need to be installed with `:MasonInstall <package>`
 - lua-language-server
-- pyright
+- python-lsp-server
 - ruff
 - rust-analyzer
 - stylua
