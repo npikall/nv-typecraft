@@ -5,6 +5,11 @@ return {
     config = function()
       require("mason").setup()
     end,
+    opts = {
+      ensure_installed = {
+        "python-lsp-server",
+      },
+    },
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -32,6 +37,25 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities
       })
+      lspconfig.pylsp.setup({
+        capabilities = capabilities
+      })
+
+      vim.lsp.config('ruff', {
+        init_options = {
+          settings = {
+            -- Ruff language server settings go here
+          }
+        }
+      })
+      vim.lsp.enable('ruff')
+
+      vim.lsp.config("rust_analyzer", {
+        settings = {
+          ["rust-analyzer"] = {},
+        },
+      })
+      vim.lsp.enable('rust_analyzer')
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
