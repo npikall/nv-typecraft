@@ -7,7 +7,7 @@ return {
         end,
         opts = {
             ensure_installed = {
-                "python-lsp-server",
+                "pylsp",
                 "ruff",
                 "lua_ls",
                 "stylua",
@@ -50,7 +50,9 @@ return {
                 capabilities = capabilities,
             })
 
-            vim.lsp.config("ruff", {
+            -- vim.lsp.config("ruff", {
+            lspconfig.ruff.setup({
+                capabilities = capabilities,
                 init_options = {
                     settings = {
                         organizeImports = true,
@@ -76,14 +78,14 @@ return {
                     end
                 end,
             })
-            vim.lsp.enable("ruff")
+            -- vim.lsp.enable("ruff")
 
-            vim.lsp.config("rust_analyzer", {
+            lspconfig.rust_analyzer.setup({
                 settings = {
                     ["rust-analyzer"] = {},
                 },
             })
-            vim.lsp.enable("rust_analyzer")
+            -- vim.lsp.enable("rust_analyzer")
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
@@ -120,7 +122,7 @@ return {
             end,
             formatters_by_ft = {
                 lua = { "stylua" },
-                python = { "ruff" },
+                -- python = { "ruff" },
                 typst = { "typstyle" },
                 markdown = { "markdownlint" },
             },
