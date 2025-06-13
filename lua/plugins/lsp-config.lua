@@ -121,8 +121,8 @@ return {
             formatters_by_ft = {
                 lua = { "stylua" },
                 python = { "ruff" },
-                rust = { "rustfmt" },
                 typst = { "typstyle" },
+                markdown = { "markdownlint" },
             },
         },
     },

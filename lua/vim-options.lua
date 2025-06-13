@@ -7,7 +7,7 @@ vim.cmd("set relativenumber")
 vim.cmd("set colorcolumn=100")
 vim.cmd("set scrolloff=7")
 vim.o.list = true
-vim.opt.listchars = { tab = ">>>", trail = "·", nbsp = "␣", space = "·" }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣", space = "·" }
 vim.g.mapleader = " "
 vim.g.background = "light"
 
@@ -21,16 +21,16 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
 -- Open Terminal panes better
 vim.keymap.set("n", "<leader>h", function()
-  require("nvterm.terminal").toggle("horizontal")
+    require("nvterm.terminal").toggle("horizontal")
 end)
 vim.keymap.set("n", "<leader>H", function()
-  require("nvterm.terminal").new("horizontal")
+    require("nvterm.terminal").new("horizontal")
 end)
 vim.keymap.set("n", "<leader>v", function()
-  require("nvterm.terminal").toggle("vertical")
+    require("nvterm.terminal").toggle("vertical")
 end)
 vim.keymap.set("n", "<leader>V", function()
-  require("nvterm.terminal").new("vertical")
+    require("nvterm.terminal").new("vertical")
 end)
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
@@ -50,16 +50,5 @@ vim.wo.number = true
 -- vim.diagnostic.config({ virtual_lines = true })
 vim.diagnostic.config({ virtual_text = true })
 vim.keymap.set("n", "<leader>td", function()
-  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+    vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { silent = true, noremap = true })
-
--- -- Autocomands (not sure if this works)
--- local autocmd = vim.api.nvim_create_autocmd
---
--- -- Remove trailing whitespaces in all files
--- autocmd({"BufWritePre"}, {pattern = {"*"}, command = [[%s/\s+$//e]]})
---
--- -- Remove trailing windows carriage return in all files
--- if vim.fn.has("win64") == 1 or vim.fn.has("wsl") == 1 then
---   autocmd({"BufWritePre"}, {pattern = {"*"}, command = [[%s/\r$//e]] })
--- end
