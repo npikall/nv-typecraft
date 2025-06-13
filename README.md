@@ -2,14 +2,14 @@
 This config is based on the neovim config from [cpow].
 
 ## Roadmap
-- [ ] Python
-  - [ ] Linter, Formatter => Ruff
-  - [ ] LSP, Autocomplete => Pyright
-- [ ] Rust
-  - [ ] LSP => rust-analyzer
-- [ ] Typst
-  - [ ] Linter, Formatter, LSP => Tinymist
-  - [ ] Preview
+- [?] Python
+  - [?] Linter, Formatter => Ruff
+  - [?] LSP, Autocomplete => Pyright
+- [~] Rust
+  - [~] LSP => rust-analyzer
+- [x] Typst
+  - [x] Linter, Formatter, LSP => Tinymist
+  - [x] Preview
 - [ ] Panes für Buffer (switch with Tab)?
 
 ## Issues
