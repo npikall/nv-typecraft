@@ -1,3 +1,6 @@
+-- I have no clue how any of this lsp stuff works.
+-- It just seems to magically work like this.
+-- Even though it is not exactly how I want it.
 return {
     {
         "williamboman/mason.nvim",
@@ -7,7 +10,6 @@ return {
         end,
         opts = {
             ensure_installed = {
-                "pylsp",
                 "ruff",
                 "lua_ls",
                 "stylua",
@@ -46,9 +48,9 @@ return {
             lspconfig.lua_ls.setup({
                 capabilities = capabilities,
             })
-            lspconfig.pylsp.setup({
-                capabilities = capabilities,
-            })
+            -- lspconfig.pylsp.setup({
+            --     capabilities = capabilities,
+            -- })
 
             -- vim.lsp.config("ruff", {
             lspconfig.ruff.setup({
@@ -59,9 +61,6 @@ return {
                         lineLength = 100,
                         lint = {
                             select = { "E4", "E7", "E9", "F", "B", "Q" },
-                        },
-                        format = {
-                            fixAll = true,
                         },
                         -- Ruff language server settings go here
                     },
