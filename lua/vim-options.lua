@@ -47,14 +47,14 @@ vim.keymap.set("i", "<A-8>", "[")
 vim.keymap.set("i", "<A-9>", "]")
 
 -- Preview settings
-vim.keymap.set("n", "<leader>p", ":MarkdownPreviewToggle<CR>")
+-- vim.keymap.set("n", "<leader>p", ":MarkdownPreviewToggle<CR>")
 
 -- vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.wo.number = true
 
 -- Inline Diagnostics
--- vim.diagnostic.config({ virtual_lines = true })
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({ virtual_lines = true })
+-- vim.diagnostic.config({ virtual_text = true })
 vim.keymap.set("n", "<leader>td", function()
     vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { silent = true, noremap = true })
